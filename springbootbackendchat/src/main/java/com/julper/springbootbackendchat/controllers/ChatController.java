@@ -26,4 +26,11 @@ public class ChatController {
         return mensaje;
     }
 
+    //Este método es para notificar cuando un usuario está escribiendo. Devolvemos un string, por ej: 'Menganito está escribiendo'
+    @MessageMapping("/escribiendo")
+    @SendTo("/chat/escribiendo")
+    public String estaEscribiendo(String username){
+        return username.concat(" está escribiendo");
+    }
+
 }
